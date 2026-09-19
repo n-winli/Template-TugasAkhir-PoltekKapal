@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text">
+  <info>
+    <title>PPNS Harvard</title>
+    <title-short>PPNS</title-short>
+    <id>http://www.ppns.ac.id</id>
+    <link href="http://www.ppns.ac.id" rel="self"/>
+    <updated>2026-08-28T00:00:00+00:00</updated>
+  </info>
+
+  <locale xml:lang="id">
+    <terms>
+      <term name="and"> dan </term>
+      <term name="et-al">dkk.</term>
+    </terms>
+  </locale>
+
+  <macro name="author-short">
+    <names variable="author">
+      <name form="short" and="text" delimiter=", " initialize-with="."/>
+      <substitute>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="author-long">
+    <names variable="author">
+      <name name-as-sort-order="all" and="text" delimiter=", " initialize-with="." delimiter-precedes-last="always"/>
+      <substitute>
+        <text variable="title"/>
+      </substitute>
+    </names>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="book-title">
+    <text variable="title" font-weight="bold"/>
+  </macro>
+
+  <macro name="article-title">
+    <text variable="title" font-style="italic"/>
+  </macro>
+
+  <macro name="plain-title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="journal-details">
+    <group delimiter=", ">
+      <text variable="container-title" font-weight="bold"/>
+      <text variable="volume" prefix="Vol. "/>
+      <text variable="issue" prefix="No. "/>
+      <text variable="page" prefix="pp. "/>
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+
+  <macro name="proceedings-details">
+    <group delimiter=". ">
+      <text variable="container-title" font-weight="bold"/>
+      <group delimiter=", ">
+        <date variable="event-date">
+          <date-part name="day" suffix=" "/>
+          <date-part name="month" suffix=" "/>
+          <date-part name="year"/>
+        </date>
+        <text variable="event-place"/>
+        <text variable="publisher"/>
+        <text variable="publisher-place"/>
+      </group>
+      <names variable="editor" prefix="Diedit oleh ">
+        <name and="text" delimiter=", " initialize-with="."/>
+      </names>
+    </group>
+  </macro>
+
+  <macro name="book-details">
+    <group delimiter=", ">
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+
+  <macro name="thesis-details">
+    <group delimiter=", ">
+      <text variable="genre" font-weight="bold"/>
+      <text variable="publisher"/>
+      <text variable="publisher-place"/>
+    </group>
+  </macro>
+
+  <macro name="newspaper-details">
+    <group delimiter=", ">
+      <text variable="container-title" font-weight="bold"/>
+      <text variable="publisher-place" prefix="(" suffix=")"/>
+      <date variable="issued">
+        <date-part name="day" suffix=" "/>
+        <date-part name="month"/>
+      </date>
+    </group>
+  </macro>
+
+  <macro name="magazine-details">
+    <group delimiter=", ">
+      <text variable="container-title" font-weight="bold"/>
+      <text variable="volume"/>
+      <text variable="issue"/>
+      <text variable="page" prefix="pp. "/>
+    </group>
+  </macro>
+
+  <macro name="web-details">
+    <group delimiter=". ">
+      <text variable="URL" font-style="normal" text-decoration="underline"/>
+      <date variable="accessed" prefix="[" suffix="]">
+        <date-part name="day" suffix=" "/>
+        <date-part name="month" suffix=" "/>
+        <date-part name="year"/>
+      </date>
+    </group>
+  </macro>
+
+  <citation et-al-min="3" et-al-use-first="1">
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author-short"/>
+        <text macro="year"/>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="true" entry-spacing="1" line-spacing="1">
+    <sort>
+      <key macro="author-long"/>
+      <key macro="year" sort="descending"/>
+      <key macro="plain-title"/>
+    </sort>
+    <layout suffix=".">
+      <group delimiter=" ">
+        <text macro="author-long"/>
+        <date variable="issued" prefix="(" suffix=")">
+          <date-part name="year"/>
+        </date>
+      </group>
+      <choose>
+        <if type="book" match="any">
+          <text macro="book-title" prefix=". "/>
+          <text macro="book-details" prefix=". "/>
+        </if>
+        <else-if type="paper-conference chapter" match="any">
+          <text macro="article-title" prefix=". "/>
+          <text macro="proceedings-details" prefix=". "/>
+        </else-if>
+        <else-if type="article-journal" match="any">
+          <text macro="article-title" prefix=". "/>
+          <text macro="journal-details" prefix=". "/>
+        </else-if>
+        <else-if type="article-newspaper" match="any">
+          <text macro="article-title" prefix=". "/>
+          <text macro="newspaper-details" prefix=". "/>
+        </else-if>
+        <else-if type="article-magazine" match="any">
+          <text macro="plain-title" prefix=". "/>
+          <text macro="magazine-details" prefix=". "/>
+        </else-if>
+        <else-if variable="URL">
+          <text macro="article-title" prefix=". "/>
+          <text macro="web-details" prefix=". "/>
+        </else-if>
+        <else>
+          <text macro="plain-title" prefix=". "/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
