@@ -1,4 +1,5 @@
 #import "../template.typ": imgSource
+
 = METODOLOGI PENELITIAN
 
 == Alur Penelitian

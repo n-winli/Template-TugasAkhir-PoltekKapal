@@ -22,7 +22,7 @@
 #figure(image("1.jpg", width: 5cm), caption: [Ini adalah contoh])
 #imgSource()[wikipedia.org]
 
-i left there on purpose a sad sap laying on the surface can you find me? i dug my heels into for you to urnavel a drag path edge in the surface can you find me? can you find me?
+i left there on purpose a sad sap laying on the surface can you find me? i dug my heels into for you to unravel a drag path edge in the surface can you find me? can you find me?
 
 do you want to know why typing here hauling though far away we're still the same we're stil the same hauling ghost they reappear
 
