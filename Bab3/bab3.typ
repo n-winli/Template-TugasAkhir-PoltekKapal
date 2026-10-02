@@ -159,6 +159,5 @@ Karena hal inilah yang menyebabkan @fajar_alvandy_perbandingan_2024 kehilangan s
 And they won't wait, we here to stay, howling ghost they reappear
 in the sea app sebuah hal yang penting?
 
-Contoh adalah aku sedang mengedit mengenai bab 3 ini dan di kemudian hari aku akan menambahkan suatu fitur yang berguna
-Misalnya nih ini lagi kan
+Contoh adalah aku sedang mengedit mengenai bab 3 ini dan di kemudian hari aku akan menambahkan suatu fitur yang berguna Misalnya nih ini lagi kan
 breath in breath out let the human in, o h oh oh oo hoh , breath in breath out let it in, o o h o hh oh hoh oh ,
