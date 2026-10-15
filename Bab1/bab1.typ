@@ -3,8 +3,9 @@
 == Latar Belakang
 
 #lorem(60)
-what makes this thing able to
+
 #lorem(22)
+
 
 #lorem(50)
 
